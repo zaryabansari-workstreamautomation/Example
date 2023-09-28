@@ -7,6 +7,11 @@ pipeline {
         nodejs 'Node18'
     }
 
+    environment {
+        VERSION_NAME =  "1.10.13"
+
+    }
+
     
     stages {
         
@@ -23,6 +28,7 @@ pipeline {
             steps {
                 // Run your Java application
                 sh 'javac testing.java'
+                sh 'echo "${VERSION_NAME}"'
                 sh "java Example"
             }
         }
