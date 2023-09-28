@@ -15,7 +15,7 @@ pipeline {
                 sh 'echo "Building the project..."'
                 // Make sure Ant is available on the Jenkins agent
                 // You can install Ant on the agent if necessary
-                sh 'ant clean compile' // Adjust the Ant targets as needed
+              
             }
         }
 
