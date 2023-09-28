@@ -8,6 +8,5 @@ class Example {
         System.out.println("THE END | THANKS ");
         System.out.println("Get LOST");  
 
-        
     }
 }
