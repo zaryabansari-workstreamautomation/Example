@@ -19,10 +19,11 @@ pipeline {
             }
         }
 
-        stage('Run Java Application') {
+        stage('Compile and Run Java Application') {
             steps {
                 // Run your Java application
-                sh 'java -cp test.java' // Replace with your main class and classpath
+                sh 'javac testing.java'
+                sh "java testng"
             }
         }
         
