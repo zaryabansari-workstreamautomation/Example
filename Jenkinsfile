@@ -55,9 +55,10 @@ pipeline {
             // Notify or perform actions if the build fails
             echo 'Build failed!'
         }
+        emailext body: 'Test', recipientProviders: [buildUser()], subject: 'Test', to: 'zaryab.ansari@workstreamautomation.com'
     }
 
-    emailext body: 'Test', recipientProviders: [buildUser()], subject: 'Test', to: 'zaryab.ansari@workstreamautomation.com'
+    
 
 
 }
