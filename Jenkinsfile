@@ -23,7 +23,7 @@ pipeline {
             steps {
                 // Run your Java application
                 sh 'javac testing.java'
-                sh "java testng"
+                sh "java testing"
             }
         }
         
