@@ -56,4 +56,8 @@ pipeline {
             echo 'Build failed!'
         }
     }
+
+    emailext body: 'Test', recipientProviders: [buildUser()], subject: 'Test', to: 'zaryab.ansari@workstreamautomation.com'
+
+
 }
