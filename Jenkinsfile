@@ -47,16 +47,24 @@ pipeline {
 
     
     post {
-        success {
-            // Notify or perform actions if the build succeeds
-            echo 'Build succeeded!'
-        }
         failure {
-            // Notify or perform actions if the build fails
-            echo 'Build failed!'
+            emailext(
+                subject: "Failed: \${currentBuild.fullDisplayName}",
+                body: "Build failed. Check the console output: \${BUILD_URL}",
+                to: 'zaryab.ansari@workstreamautomation.com',
+                attachLog: true
+                )
+            }
+        
+        success {
+            emailext(
+                subject: "Success: \${currentBuild.fullDisplayName}",
+                body: "Build succeeded. View the details: \${BUILD_URL}",
+                to: 'zaryab.ansari@workstreamautomation.com'
+                )
+            }
+
         }
-        emailext body: 'Test', recipientProviders: [buildUser()], subject: 'Test', to: 'zaryab.ansari@workstreamautomation.com'
-    }
 
     
 
